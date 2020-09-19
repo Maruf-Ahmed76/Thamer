@@ -251,6 +251,7 @@ aside .aside-bottom_text span{
 .page-body{
     width: 100%;
     overflow: hidden;
+    height: 100%;
 }
 .page-body .page-body_left{
     width: 57%;
@@ -263,9 +264,6 @@ aside .aside-bottom_text span{
 }
 /* Home page text */
 /* Left */
-.home-text_left,.home-text_right,.download-text_left,.interface-text_left,.interface-text_right,.vision-text_left,.vision-text_right,.p-company-text_left,.contact-text_left{
-    padding: 5rem;
-}
 .home-text_left h1{
     font-size: 60px;
 }
@@ -449,6 +447,8 @@ aside .aside-bottom_text span{
     }
     aside.active{
         width: 50%;
+        left: 0;
+        top: 0;
         z-index: 999;
         opacity: 1;
     }
@@ -462,10 +462,6 @@ aside .aside-bottom_text span{
         width: 100%;
     }
 
-    .home-text_left, .home-text_right, .download-text_left, .download-text_right, .interface-text_left, .interface-text_right, .vision-text_left, .vision-text_right, .p-company-text_left, .contact-text_left {
-        padding: 2rem;
-    }
-
     .home-text_left h1{
         font-size: 30px;
     }
@@ -475,17 +471,18 @@ aside .aside-bottom_text span{
         width: 50%;
     }
     .home-text_right .circle-img {
-        width: 300px;
-        height: 300px;
+        width: 270px;
+        height: 270px;
     }
 }
 
 @media only screen and (min-width: 768px) {
+
     html{
         font-size: 1rem;
     }
-    .home-text_left, .home-text_right, .download-text_left, .download-text_right, .interface-text_left, .interface-text_right, .vision-text_left, .vision-text_right, .p-company-text_left, .contact-text_left {
-        padding: 4rem;
+    main{
+        height: 100vh;
     }
 
     .home-text_left h1{
@@ -498,13 +495,18 @@ aside .aside-bottom_text span{
     .page-body .page-body_right{
         width: 40%;
     }
+    /* Vision page */
+    .vision-text_right .vision-right_img img{
+        width: 75%;
+    }
+    .home-text_right .circle-img {
+        width: 300px;
+        height: 300px;
+    }
     
 }
 
 @media only screen and (min-width: 992px) {
-    main{
-        height: 100vh;
-    }
     nav{
         background: unset!important;
     }
@@ -549,10 +551,6 @@ aside .aside-bottom_text span{
         width: 450px;
         bottom: 0;
         left: -7rem;
-    }
-    .home-text_right .circle-img {
-        width: 320px;
-        height: 320px;
     }
 }
 
