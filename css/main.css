@@ -173,6 +173,9 @@ p{
 .text-red{
     color: #E43F5A!important;
 }
+.clear{
+    overflow: hidden!important;
+}
 
 /* Customize bootstrap class */
 
@@ -223,6 +226,7 @@ aside .aside_menu li a{
     color: #707070;
     text-decoration: none!important;
     padding-left: 1rem;
+    position: relative;
 }
 aside .aside_menu li a:hover{
     color: #047DF7;
@@ -230,7 +234,15 @@ aside .aside_menu li a:hover{
 aside .aside_menu li a.active{
     font-family: muli-bold;
     color: #047DF7;
-    border-left: 3px solid #047DF7;
+}
+aside .aside_menu li a.active::before{
+    content: "";
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    background: #047DF7;
+    left: 0;
+    top: 0;
 }
 /* Aside bottom text */
 aside .aside-bottom_text{
@@ -304,7 +316,6 @@ aside .aside-bottom_text span{
     box-shadow: 0 0 0 0.1rem #707070!important;
 }
 .download-page-img{
-    width: 90%;
     margin: auto;
     background-image: url(../img/downloadRightBg.png);
     background-repeat: no-repeat;
@@ -320,11 +331,6 @@ aside .aside-bottom_text span{
     -webkit-clip-path: polygon(27.1% 17.9%, 66.08% 14px, 82.66% 21.07%, 83.66% 47.97%, 69.5% 80.04%, 35.05% 95.12%, 18.6% 79.14%, 54px 52.03%);  */
 }
 
-/* interface page style */
-.interface-right_img,.p-company_right_img,.contact-right_img{
-    width: 80%;
-    margin: auto;
-}
 .interface-right_img img{
     border-top: 0.5rem solid #047DF7;
 }
@@ -421,14 +427,16 @@ aside .aside-bottom_text span{
     html{
         font-size: 0.8rem;
     }
-    /* nav */
+
     nav{
         padding:20px;
         background: #ffffff;
     }
-    nav .nav-brand img{
+
+    nav .nav-brand a img{
         width: 100px;
     }
+
     .burger-menu{
         display: block;
         cursor: pointer;
@@ -437,7 +445,9 @@ aside .aside-bottom_text span{
     main{
         height: 100%;
         width: 100vw;
+        position: relative;
     }
+
     aside{
         height: 100vh;
         position: fixed;
@@ -445,19 +455,24 @@ aside .aside-bottom_text span{
         opacity: 0;
         transition: opacity ease 0.5s;
     }
+
     aside.active{
         width: 50%;
         left: 0;
         top: 0;
         z-index: 999;
         opacity: 1;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
     }
+
     .page-body{
         margin-top: 5rem;
     }
+
     .page-body .page-body_left{
         width: 100%;
     }
+
     .page-body .page-body_right{
         width: 100%;
     }
@@ -465,14 +480,24 @@ aside .aside-bottom_text span{
     .home-text_left h1{
         font-size: 30px;
     }
-    /* Vision page */
+
     .vision-text_right .vision-right_img img{
         position: unset;
         width: 50%;
     }
+
     .home-text_right .circle-img {
         width: 270px;
         height: 270px;
+    }
+
+    .download-page-img{
+        width: 80%;
+    }
+
+    .interface-right_img,.p-company_right_img,.contact-right_img{
+        width: 50%;
+        margin: auto;
     }
 }
 
@@ -481,8 +506,13 @@ aside .aside-bottom_text span{
     html{
         font-size: 1rem;
     }
+
     main{
         height: 100vh;
+    }
+
+    nav .nav-brand a img{
+        width: 150px;
     }
 
     .home-text_left h1{
@@ -495,7 +525,7 @@ aside .aside-bottom_text span{
     .page-body .page-body_right{
         width: 40%;
     }
-    /* Vision page */
+
     .vision-text_right .vision-right_img img{
         width: 75%;
     }
@@ -503,23 +533,30 @@ aside .aside-bottom_text span{
         width: 300px;
         height: 300px;
     }
+    .interface-right_img,.p-company_right_img,.contact-right_img{
+        width: 70%;
+    }
     
 }
 
 @media only screen and (min-width: 992px) {
+
     nav{
         background: unset!important;
     }
-    /* Nav menu */
+
     nav{
         padding: 40px 64px 20px 64px;
     }
-    nav .nav-brand img{
+
+    nav .nav-brand a img{
         width: 200px;
     }
+
     aside.active{
         width: 362px;
         z-index: unset;
+        box-shadow: none;
     }
     .page-body{
         margin-top: unset;
@@ -538,23 +575,23 @@ aside .aside-bottom_text span{
         width: 362px;
         opacity: 1;
     }
-    .home-text_left{
-        /* padding: 2rem; */
-    }
     .home-text_left h1{
         font-size: 30px;
     }
 
-    /* Vision page */
     .vision-text_right .vision-right_img img{
         position: absolute;
-        width: 450px;
+        width: 400px;
         bottom: 0;
         left: -7rem;
     }
+
+    .interface-right_img,.p-company_right_img,.contact-right_img{
+        width: 80%;
+    }
 }
 
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 1250px){
     .home-text_left h1{
         font-size: 60px!important;
     }
