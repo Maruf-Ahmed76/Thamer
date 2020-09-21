@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" dir="ltr" lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -10,7 +10,8 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
   <link rel="stylesheet" href="./fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" id="ltrStyle" media="" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" id="rtlStyle" media="none" href="./css/bootstrap.rtl.min.css">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/animate.css">
 
@@ -37,7 +38,7 @@
             </div>
 
             <!-- Login button -->
-            <div class="nav-login_btn ml-auto d-none d-md-block">
+            <div class="nav-login_btn ml-auto d-none">
                 <a href="#" class="btn btn-primary px-5 text-dark">Login</a>
             </div>
         </nav>
@@ -74,7 +75,7 @@
 
                 <!-- Aside bottom text -->
                 <div class="w-100 aside-bottom_text d-flex flex-row align-items-center justify-content-lg-end">
-                    <h2 class="m-0">اللغة العربية</h2>
+                    <h2 class="btn">اللغة العربية</h2>
                     <span class="ml-1"></span>
                 </div>
             </aside>

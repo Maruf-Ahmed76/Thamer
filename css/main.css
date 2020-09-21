@@ -244,6 +244,11 @@ aside .aside_menu li a.active::before{
     left: 0;
     top: 0;
 }
+
+html[dir = rtl] aside .aside_menu li a.active::before{
+    right: -0.5rem!important;
+}
+
 /* Aside bottom text */
 aside .aside-bottom_text{
     position: absolute;
@@ -252,6 +257,10 @@ aside .aside-bottom_text{
 aside .aside-bottom_text h2{
     font-family: muli-bold;
     color: #15181C;
+    cursor: pointer;
+}
+.aside-bottom_text h2:hover{
+    color: #047DF7;
 }
 aside .aside-bottom_text span{
     width: 4rem;
@@ -307,9 +316,7 @@ aside .aside-bottom_text span{
 /* Download page */
 .download-btn{
     border-radius: 1rem;
-    border-top: 1px solid #707070;
-    border-right: 1px solid #707070;
-    border-bottom: 1px solid #707070;
+    border: 1px solid #707070;
     overflow: hidden;
 }
 .download-btn:focus{
@@ -457,7 +464,6 @@ aside .aside-bottom_text span{
 
     aside.active{
         width: 50%;
-        left: 0;
         top: 0;
         z-index: 999;
         opacity: 1;
@@ -509,12 +515,21 @@ aside .aside-bottom_text span{
     }
 }
 
+@media only screen and (min-width : 480px){
+    aside .aside_menu li a{
+        font-size: 1.3rem;
+    }
+}
+
 @media only screen and (min-width: 578px){
     html{
         font-size: 1rem;
     }
     .home-text_left h1{
         font-size: 40px;
+    }
+    aside .aside_menu li a{
+        font-size: 1.4rem;
     }
 }
 
